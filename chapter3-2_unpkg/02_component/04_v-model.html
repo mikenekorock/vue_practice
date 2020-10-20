@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+    .hello {
+      font-size: 20pt;
+      font-weight: bold;
+      border: 1px solid magenta;
+      padding: 5px 10px 0px 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Vue.js</h1>
+  <div id="app">
+    <div><hello :name="name" /></div>
+    <div><input type="text" v-model="name"></div>
+  </div>
+
+  <script>
+    Vue.component('hello',
+          {
+                // タイプの指定はしなくても動くけど、したほうがいいよね
+                props: { name: String },
+                template: '<p class="hello">Hello, {{ name }}!</p>'
+          })
+
+    const app = new Vue({
+          el: '#app',
+          data: {
+                name: "no-name"
+              }
+        })
+  </script>
+</body>
+</html>

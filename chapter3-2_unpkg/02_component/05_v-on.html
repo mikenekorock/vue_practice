@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+    .hello {
+      font-size: 20pt;
+      font-weight: bold;
+      border: 1px solid magenta;
+      padding: 5px 10px 0px 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Vue.js</h1>
+  <div id="app">
+    <hello />
+  </div>
+
+  <script>
+    const hello = Vue.component('hello',
+          {
+                data: () => {
+                      return {
+                            counter: 0
+                          }
+                    },
+                // ここでv-onが使われている。onclickではコンポーネント内のメソッドを呼び出せないのでエラーになる。
+                template: '<p v-on:click="counter++;" class="hello">clicked:{{ counter }}</p>'
+          })
+
+    const app = new Vue({
+          el: '#app',
+        })
+  </script>
+</body>
+</html>
