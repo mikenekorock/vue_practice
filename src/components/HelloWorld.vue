@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ title }}</h1>
-    <p>{{ messagea }}</p>
+    <p>{{ message }}</p>
     <hr>
     <div>
       <input type="text" v-model="input">
@@ -18,13 +18,13 @@ export default {
   },
   data:function() {
     return {
-      messagea: 'お名前は？',
+      message: 'お名前は？',
       input: 'no name'
     }
   },
   methods: {
     doAction: function() {
-      this.messagea = 'こんにちは、' + this.input + 'さん！'
+      this.message = 'こんにちは、' + this.input + 'さん！'
       this.$emit('result-event', this.input)
     }
   }
