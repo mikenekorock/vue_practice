@@ -1,6 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld
+    :title="message"
+  />
+  <hr>
+  <button v-on:click="doAction">change title</button>
 </template>
 
 <script>
@@ -10,6 +13,17 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data: function() {
+    return {
+      message: 'HELLO'
+    }
+  },
+  methods: {
+    doAction: function() {
+      const input = prompt("new tile:")
+      this.message = input
+    }
   }
 }
 </script>
