@@ -17,9 +17,6 @@ export default {
   components: {
     Calc
   },
-  props: {
-    result: Array
-  },
   data: function() {
     return {
       message: 'CALC',
