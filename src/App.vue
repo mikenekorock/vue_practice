@@ -7,19 +7,27 @@
   <div>
     <table v-html="log"></table>
   </div>
+  <HelloWorld2
+    :message="hmessage"
+    :num="num"
+  />
 </template>
 
 <script>
 import Calc from './components/calc.vue'
+import HelloWorld2 from './components/HelloWorld2.vue'
 
 export default {
   name: 'app',
   components: {
-    Calc
+    Calc,
+    HelloWorld2
   },
   data: function() {
     return {
       message: 'CALC',
+      hmessage: 'validate',
+      num: 123,
       result: [],
     }
   },
