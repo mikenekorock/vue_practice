@@ -7,21 +7,18 @@
   <div>
     <table v-html="log"></table>
   </div>
-  <HelloWorld2
-    :message="hmessage"
-    :num="num"
-  />
+  <Watch />
 </template>
 
 <script>
-import Calc from './components/calc.vue'
-import HelloWorld2 from './components/HelloWorld2.vue'
+import Calc from './components/02_calc.vue'
+import Watch from './components/05_Watch.vue'
 
 export default {
   name: 'app',
   components: {
     Calc,
-    HelloWorld2
+    Watch
   },
   data: function() {
     return {
