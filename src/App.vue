@@ -1,4 +1,5 @@
 <template>
+  <!--
   <Calc
     :title="message"
     v-on:result-event="appAction"
@@ -7,23 +8,24 @@
   <div>
     <table v-html="log"></table>
   </div>
-  <Watch />
+  -->
+  <Test :title="testMessage"/>
 </template>
 
 <script>
-import Calc from './components/02_calc.vue'
-import Watch from './components/05_Watch.vue'
+//import Calc from './components/02_calc.vue'
+import Test from './components/06_Event.vue'
 
 export default {
   name: 'app',
   components: {
-    Calc,
-    Watch
+//  Calc,
+    Test
   },
   data: function() {
     return {
       message: 'CALC',
-      hmessage: 'validate',
+      testMessage: 'validate',
       num: 123,
       result: [],
     }
